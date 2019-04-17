@@ -4,9 +4,9 @@ import * as path from "path"
 import { Url } from "../library/url"
 import { Connection } from "../library/connection"
 import CockpitError from "../library/cockpit-error"
-import AddressRegister from "../configuration/address-register"
 import CockpitRequestOptions from "../models/cockpit-request-options"
 import { CockpitCollectionResponse, CockpitSingletonResponse, AnyCockpitResponse } from "../models/cockpit-response"
+import AddressRegister from "../configuration/address-register"
 
 export namespace CockpitDataAccess {
 

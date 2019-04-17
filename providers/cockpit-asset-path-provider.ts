@@ -1,15 +1,22 @@
 import { Url, UrlComponent } from "../library/url"
 import { CockpitImageRequestPreset } from "../library/cockpit-image-request-presets"
-import { Configuration } from "../configuration/configuration"
+import { Connection } from "../library/connection"
 import { QueryParameterProvider } from "./query-parameter-provider"
+import Addresses from "../configuration/address-register"
 
 export namespace CockpitAssetPathProvider {
 
-	const token = Configuration.Connections.cms.token()
+	function address(): Connection.Address {
+		return Addresses.getDefault()
+	}
+
+	function token() {
+		return address().token
+	}
 
 	const pathPrefix = (() => {
-		const connection = Configuration.Connections.cms
-		return `${connection.protocol(Configuration.Context.Client)}://${connection.host(Configuration.Context.Client)}`
+		const currentAddress = address()
+		return `${currentAddress.protocol(Connection.Context.Client)}://${currentAddress.host(Connection.Context.Client)}`
 	})()
 
 	export function cockpitAsset(component: UrlComponent): Url {

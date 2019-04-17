@@ -1,9 +1,10 @@
 import axios from "axios"
 import * as path from "path"
 
-import { Configuration } from "../configuration/configuration"
 import { Url } from "../library/url"
+import { Connection } from "../library/connection"
 import CockpitError from "../library/cockpit-error"
+import AddressRegister from "../configuration/address-register"
 import CockpitRequestOptions from "../models/cockpit-request-options"
 import { CockpitCollectionResponse, CockpitSingletonResponse, AnyCockpitResponse } from "../models/cockpit-response"
 
@@ -49,11 +50,10 @@ export namespace CockpitDataAccess {
 	// Preparation
 
 	function preparedUrl(route: string): Url {
-		const connection = Configuration.Connections.cms
-		
-		const protocol = connection.protocol()
-		const host = connection.host()
-		const token = connection.token()
+		const currentAddress = address()
+		const protocol = currentAddress.protocol()
+		const host = currentAddress.host()
+		const token = currentAddress.token()
 		
 		return `${protocol}://${path.join(host, route)}?token=${token}`
 	}
@@ -72,6 +72,10 @@ export namespace CockpitDataAccess {
 		}
 
 		return mergedOptions
+	}
+
+	function address(): Connection.Address {
+		return AddressRegister.getDefault()
 	}
 	
 }

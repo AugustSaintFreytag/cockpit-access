@@ -75,7 +75,7 @@ export namespace CockpitDataAccess {
 	}
 
 	function address(): Connection.Address {
-		return AddressRegister.getDefault()
+		return AddressRegister.defaultAddress()
 	}
 	
 }

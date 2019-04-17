@@ -7,7 +7,7 @@ import Addresses from "../configuration/address-register"
 export namespace CockpitAssetPathProvider {
 
 	function address(): Connection.Address {
-		return Addresses.getDefault()
+		return Addresses.defaultAddress()
 	}
 
 	function token() {

@@ -2,13 +2,13 @@ import { Connection } from "../library/connection"
 
 class AddressRegister {
 
-	private defaultAddress: Connection.Address|undefined
-	private addresses: {[key: string]: Connection.Address} = {}
+	private storedDefaultAddress: Connection.Address|undefined
+	private storedAddresses: {[key: string]: Connection.Address} = {}
 
 	// Access
 
-	get(key: string): Connection.Address {
-		const address = this.addresses[key]
+	address(key: string): Connection.Address {
+		const address = this.storedAddresses[key]
 
 		if (!address) {
 			throw new TypeError(`No registered address for key '${key}'.`)
@@ -17,8 +17,8 @@ class AddressRegister {
 		return address
 	}
 
-	getDefault() {
-		const address = this.defaultAddress
+	defaultAddress() {
+		const address = this.storedDefaultAddress
 
 		if (!address) {
 			throw new TypeError(`No registered default address.`)
@@ -30,7 +30,7 @@ class AddressRegister {
 	// Management
 
 	register(address: Connection.Address, key: string) {
-		this.addresses[key] = address
+		this.storedAddresses[key] = address
 	}
 
 	registerDefault(address: Connection.Address, key?: string) {
@@ -38,15 +38,15 @@ class AddressRegister {
 			this.register(address, key)
 		}
 
-		this.defaultAddress = address
+		this.storedDefaultAddress = address
 	}
 
 	unset(key: string) {
-		delete this.addresses[key]
+		delete this.storedAddresses[key]
 	}
 
 	unsetDefault() {
-		this.defaultAddress = undefined
+		this.storedDefaultAddress = undefined
 	}
 
 }

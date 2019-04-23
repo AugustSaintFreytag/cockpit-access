@@ -6,6 +6,7 @@ import CockpitError from "./library/cockpit-error"
 import { CockpitImageRequestPreset } from "./library/cockpit-image-request-presets"
 import { Connection } from "./library/connection"
 import { CockpitEntry } from "./models/cockpit-entry"
+import { CockpitMetaData } from "./models/cockpit-meta-data"
 import { CockpitFieldDefinition } from "./models/cockpit-field-definition"
 import { CockpitImageRequest, CockpitImageOptions } from "./models/cockpit-image"
 import CockpitRequestOptions from "./models/cockpit-request-options"
@@ -29,6 +30,7 @@ export {
 
 	// Models
 	CockpitEntry,
+	CockpitMetaData,
 	CockpitFieldDefinition,
 	CockpitImageRequest, 
 	CockpitImageOptions,

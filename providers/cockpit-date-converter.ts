@@ -1,4 +1,4 @@
-export namespace ConversionProvider {
+export namespace CockpitDateConverter {
 
 	export function dateFromString(string: string): Date|undefined {
 		const date = new Date(string)

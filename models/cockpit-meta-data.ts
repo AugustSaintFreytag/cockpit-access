@@ -1,6 +1,6 @@
 import { UUID } from "../library/uuid"
 import { CockpitEntry } from "../models/cockpit-entry"
-import { ConversionProvider } from "../providers/conversion-provider"
+import { CockpitDateConverter } from "../providers/cockpit-date-converter"
 
 export class CockpitMetaData {
 	
@@ -18,13 +18,13 @@ export class CockpitMetaData {
 		this.editor = entry._mby || undefined
 
 		if (entry._created) {
-			this.created = ConversionProvider.dateFromTimestamp(entry._created)!
+			this.created = CockpitDateConverter.dateFromTimestamp(entry._created)!
 		} else {
 			this.created = new Date()
 		}
 
 		if (entry._modified) {
-			this.modified = ConversionProvider.dateFromTimestamp(entry._modified)
+			this.modified = CockpitDateConverter.dateFromTimestamp(entry._modified)
 		}
 	}
 

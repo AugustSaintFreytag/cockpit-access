@@ -1,5 +1,5 @@
 import { CockpitDataAccess } from "./providers/cockpit-data-access"
-import { ConversionProvider } from "./providers/conversion-provider"
+import { CockpitDateConverter } from "./providers/cockpit-date-converter"
 import { QueryParameterProvider } from "./providers/query-parameter-provider"
 import { CockpitAssetPathProvider } from "./providers/cockpit-asset-path-provider"
 import CockpitError from "./library/cockpit-error"
@@ -17,7 +17,7 @@ export {
 	// Providers
 	CockpitAssetPathProvider,
 	CockpitDataAccess, 
-	ConversionProvider,
+	CockpitDateConverter,
 	QueryParameterProvider,
 
 	// Configuration

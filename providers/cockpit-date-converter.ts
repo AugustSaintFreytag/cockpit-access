@@ -20,4 +20,20 @@ export namespace CockpitDateConverter {
 		return date
 	}
 
+	export function stringFromDate(date: Date): string|undefined {
+		if (isNaN(date.valueOf())) {
+			return undefined
+		}
+
+		return `${date.getFullYear()}-${stringWithLeadingZero(date.getMonth()+1)}-${date.getDate()}`
+	}
+
+	function stringWithLeadingZero(number: number): string {
+		if (number > 9) {
+			return String(number)
+		}
+
+		return "0" + String(number)
+	}
+
 }

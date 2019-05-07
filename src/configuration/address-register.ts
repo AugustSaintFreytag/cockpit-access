@@ -51,6 +51,4 @@ class AddressRegister {
 
 }
 
-const shared = new AddressRegister()
-
-export default shared
+export default new AddressRegister()

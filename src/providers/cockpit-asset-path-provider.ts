@@ -14,13 +14,13 @@ export namespace CockpitAssetPathProvider {
 		return address().token
 	}
 
-	const pathPrefix = (() => {
+	function pathPrefix() {
 		const currentAddress = address()
 		return `${currentAddress.protocol(Connection.Context.Client)}://${currentAddress.host(Connection.Context.Client)}`
-	})()
+	}
 
 	export function cockpitAsset(component: UrlComponent): Url {
-		return `${pathPrefix}${component}`
+		return `${pathPrefix()}${component}`
 	}
 
 	export function cockpitImage(component: UrlComponent, format?: CockpitImageRequestPreset.Format|undefined): Url {
@@ -30,7 +30,7 @@ export namespace CockpitAssetPathProvider {
 		const imageRequestOptions = imageRequest.options(sourcePath) as QueryParameterProvider.ParameterDictionary
 
 		const joinedImageRequestOptions = QueryParameterProvider.joinedParameters(imageRequestOptions)
-		const imageUrl: Url = `${pathPrefix}/api/cockpit/image?token=${token}&${joinedImageRequestOptions}`
+		const imageUrl: Url = `${pathPrefix()}/api/cockpit/image?token=${token}&${joinedImageRequestOptions}`
 
 		return imageUrl
 	}

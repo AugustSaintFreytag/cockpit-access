@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "A thin data access layer, models and interfaces for Cockpit CMS.",
 	"main": "dist/index.js",
+	"typings": "types/index.d.ts",
 	"repository": "git@gitlab.com:apricum/cockpit-access.git",
 	"author": "August S. Freytag <night@apricummedia.com>",
 	"license": "MIT",

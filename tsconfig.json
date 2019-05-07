@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"baseUrl": ".",
+		"baseUrl": "./src",
 		"target": "esnext",
 		"module": "esnext",
 		"moduleResolution": "node",
@@ -8,8 +8,10 @@
 			"esnext"
 		],
 		"sourceMap": true,
+		"declarationMap": true,
 		"strict": true,
 		"declaration": true,
+		"declarationDir": "types",
 		"outDir": "./dist",
 		"paths": {
 			"~/*": [

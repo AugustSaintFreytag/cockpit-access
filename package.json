@@ -14,7 +14,7 @@
 	},
 	"scripts": {
 		"build": "rm -rf dist && rm -rf types && tsc",
-		"install": "yarn run build"
+		"install": "yarn install --ignore-scripts && yarn run build"
 	},
 	"dependencies": {
 		"axios": "^0.18.0"

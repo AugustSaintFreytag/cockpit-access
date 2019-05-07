@@ -1,12 +1,9 @@
 {
 	"compilerOptions": {
 		"baseUrl": "./src",
-		"target": "esnext",
-		"module": "esnext",
+		"target": "es6",
+		"module": "commonjs",
 		"moduleResolution": "node",
-		"lib": [
-			"esnext"
-		],
 		"sourceMap": true,
 		"declarationMap": true,
 		"strict": true,

@@ -13,8 +13,8 @@
 		"typescript": "^3.4.3"
 	},
 	"scripts": {
-		"build": "tsc",
-		"install": "tsc"
+		"build": "rm -rf dist && rm -rf types && tsc",
+		"install": "yarn && yarn run build"
 	},
 	"dependencies": {
 		"axios": "^0.18.0"

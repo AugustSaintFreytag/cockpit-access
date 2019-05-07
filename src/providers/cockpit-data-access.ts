@@ -1,6 +1,7 @@
 import axios from "axios"
 import * as path from "path"
 
+import { NuxtProcess } from "../library/nuxt-process"
 import { Url } from "../library/url"
 import { Connection } from "../library/connection"
 import CockpitError from "../library/cockpit-error"
@@ -51,8 +52,10 @@ export namespace CockpitDataAccess {
 
 	function preparedUrl(route: string): Url {
 		const currentAddress = address()
-		const protocol = currentAddress.protocol()
-		const host = currentAddress.host()
+		const currentContext = context()
+
+		const protocol = currentAddress.protocol(currentContext)
+		const host = currentAddress.host(currentContext)
 		const token = currentAddress.token()
 		
 		return `${protocol}://${path.join(host, route)}?token=${token}`
@@ -76,6 +79,10 @@ export namespace CockpitDataAccess {
 
 	function address(): Connection.Address {
 		return AddressRegister.defaultAddress()
+	}
+
+	function context(): Connection.Context {
+		return (process as NuxtProcess).server ? Connection.Context.Server : Connection.Context.Client
 	}
 	
 }

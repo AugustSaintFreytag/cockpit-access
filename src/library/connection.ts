@@ -6,15 +6,8 @@ export namespace Connection {
 	export type ApiToken = string
 
 	export interface Address {
-		clientProtocol(): Protocol
-		clientHost(): Url
-
-		serverProtocol(): Protocol
-		serverHost(): Url
-
-		protocol(): Protocol
-		host(): Url
-
+		protocol(context?: Context): Protocol
+		host(context?: Context): Url
 		token(): ApiToken
 	}
 

@@ -44,8 +44,12 @@ export namespace CockpitDataAccess {
 
 			return serverResponse.data as CockpitCollectionResponse
 		} catch (err) {
-			throw new CockpitError(`Could not get response from cockpit. ${err}`)
+			throw new CockpitError(`Could not get response from cockpit for url '${obfuscatedUrl(url)}'. ${err}`)
 		}
+	}
+
+	function obfuscatedUrl(url: Url): Url {
+		return url.replace(/(token=)([a-zA-Z0-9]+?)(&*)/, "$1redacted$3")
 	}
 
 	// Preparation

@@ -49,7 +49,7 @@ export namespace CockpitDataAccess {
 	}
 
 	function obfuscatedUrl(url: Url): Url {
-		return url.replace(/(token=)([a-zA-Z0-9]+?)(&*)/, "$1redacted$3")
+		return url.replace(/(token=)([a-fA-F0-9]+)(&*)/, "$1redacted$3")
 	}
 
 	// Preparation

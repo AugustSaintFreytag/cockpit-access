@@ -6,8 +6,8 @@ export namespace Connection {
 	export type ApiToken = string
 
 	export interface Address {
-		protocol(context?: Connection.Context): Protocol
-		host(context?: Connection.Context): Url
+		protocol(): Protocol
+		host(): Url
 		token(): ApiToken
 	}
 

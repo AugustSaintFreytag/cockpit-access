@@ -16,7 +16,7 @@ export namespace CockpitAssetPathProvider {
 
 	function pathPrefix() {
 		const currentAddress = address()
-		return `${currentAddress.protocol(Connection.Context.Client)}://${currentAddress.host(Connection.Context.Client)}`
+		return `${currentAddress.clientProtocol()}://${currentAddress.clientHost()}`
 	}
 
 	export function cockpitAsset(component: UrlComponent): Url {

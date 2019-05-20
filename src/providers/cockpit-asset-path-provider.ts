@@ -30,7 +30,7 @@ export namespace CockpitAssetPathProvider {
 		const imageRequestOptions = imageRequest.options(sourcePath) as QueryParameterProvider.ParameterDictionary
 
 		const joinedImageRequestOptions = QueryParameterProvider.joinedParameters(imageRequestOptions)
-		const imageUrl: Url = `${pathPrefix()}/api/cockpit/image?token=${token}&${joinedImageRequestOptions}`
+		const imageUrl: Url = `${pathPrefix()}/api/cockpit/image?token=${token()}&${joinedImageRequestOptions}`
 
 		return imageUrl
 	}

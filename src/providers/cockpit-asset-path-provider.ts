@@ -11,7 +11,7 @@ export namespace CockpitAssetPathProvider {
 	}
 
 	function token() {
-		return address().token
+		return address().token()
 	}
 
 	function pathPrefix() {

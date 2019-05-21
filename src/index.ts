@@ -3,7 +3,6 @@ import { CockpitDateConverter } from "./providers/cockpit-date-converter"
 import { QueryParameterProvider } from "./providers/query-parameter-provider"
 import { CockpitAssetPathProvider } from "./providers/cockpit-asset-path-provider"
 import CockpitError from "./library/cockpit-error"
-import { CockpitImageRequestPreset } from "./library/cockpit-image-request-presets"
 import { Connection } from "./library/connection"
 import { CockpitEntry } from "./models/cockpit-entry"
 import { CockpitMetaData } from "./models/cockpit-meta-data"
@@ -26,7 +25,6 @@ export {
 	// Library
 	Connection,
 	CockpitError,
-	CockpitImageRequestPreset,
 
 	// Models
 	CockpitEntry,

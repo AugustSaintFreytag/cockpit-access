@@ -1,8 +1,8 @@
+import Addresses from "../configuration/address-register"
 import { Url, UrlComponent } from "../library/url"
-import { CockpitImageRequestPreset } from "../library/cockpit-image-request-presets"
 import { Connection } from "../library/connection"
 import { QueryParameterProvider } from "./query-parameter-provider"
-import Addresses from "../configuration/address-register"
+import { CockpitImageRequest } from "../models/cockpit-image"
 
 export namespace CockpitAssetPathProvider {
 
@@ -23,10 +23,8 @@ export namespace CockpitAssetPathProvider {
 		return `${pathPrefix()}${component}`
 	}
 
-	export function cockpitImage(component: UrlComponent, format?: CockpitImageRequestPreset.Format|undefined): Url {
+	export function cockpitImage(component: UrlComponent, imageRequest: CockpitImageRequest): Url {
 		const sourcePath = component
-
-		const imageRequest = CockpitImageRequestPreset.preset(format || CockpitImageRequestPreset.Format.Regular)
 		const imageRequestOptions = imageRequest.options(sourcePath) as QueryParameterProvider.ParameterDictionary
 
 		const joinedImageRequestOptions = QueryParameterProvider.joinedParameters(imageRequestOptions)

@@ -5,17 +5,14 @@
 	"main": "dist/index.js",
 	"typings": "types/index.d.ts",
 	"repository": "git@gitlab.com:apricum/cockpit-access.git",
-	"author": "August S. Freytag <night@apricummedia.com>",
+	"author": "August Saint Freytag <night@apricummedia.com>",
 	"license": "MIT",
 	"private": false,
 	"devDependencies": {
-		"@types/node": "^11.13.4",
-		"typescript": "^3.4.3"
+		"@types/node": "~11.13",
+		"typescript": "~3.9"
 	},
-	"scripts": {
-		"build": "rm -rf dist && rm -rf types && tsc",
-		"install": "yarn install --ignore-scripts && yarn run build"
-	},
+	"scripts": {},
 	"dependencies": {
 		"axios": "^0.18.0"
 	}

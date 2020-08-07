@@ -13,6 +13,11 @@
 
 		// Rules
 		"strict": true,
+
+		// Dependencies
+		"types": [
+			"@types/node"
+		],
 		
 		// Paths
 		"outDir": "./dist",

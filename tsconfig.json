@@ -1,20 +1,27 @@
 {
 	"compilerOptions": {
-		"baseUrl": "./src",
+		// Target
 		"target": "es6",
 		"module": "commonjs",
 		"moduleResolution": "node",
+
+		// Options
 		"sourceMap": true,
-		"declarationMap": true,
-		"strict": true,
 		"declaration": true,
+		"declarationMap": true,
 		"declarationDir": "types",
+
+		// Rules
+		"strict": true,
+		
+		// Paths
 		"outDir": "./dist",
+		"baseUrl": "./src",
 		"paths": {
-			"~/*": [
+			"@/*": [
 				"./*"
 			]
 		}
 	},
-	"exclude": ["node_modules"]
+	"exclude": ["node_modules*"]
 }

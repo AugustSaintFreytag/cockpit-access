@@ -1,16 +1,14 @@
 import axios from "axios"
 import * as path from "path"
 
-import { Url } from "../library/url"
-import { Connection } from "../library/connection"
-import CockpitError from "../library/cockpit-error"
-import CockpitRequestOptions from "../models/cockpit-request-options"
-import { CockpitCollectionResponse, CockpitSingletonResponse, AnyCockpitResponse } from "../models/cockpit-response"
-import AddressRegister from "../configuration/address-register"
+import AddressRegister from "@/configuration/address-register"
+import CockpitError from "@/library/cockpit-error"
+import * as Connection from "@/library/connection"
+import CockpitRequestOptions from "@/models/cockpit-request-options"
+import { AnyCockpitResponse, CockpitCollectionResponse, CockpitSingletonResponse } from "@/models/cockpit-response"
+import { Dictionary, URL } from "@/library/types"
 
-export namespace CockpitDataAccess {
-
-	type AnyRequestObject = {[key: string]: any}
+type AnyRequestObject = Dictionary<any>
 
 	// Options
 	
@@ -47,13 +45,13 @@ export namespace CockpitDataAccess {
 		}
 	}
 
-	function obfuscatedUrl(url: Url): Url {
+	function obfuscatedUrl(url: URL): URL {
 		return url.replace(/(token=)([a-fA-F0-9]+)(&*)/, "$1redacted$3")
 	}
 
 	// Preparation
 
-	function preparedUrl(route: string): Url {
+	function preparedUrl(route: string): URL {
 		const currentAddress = address()
 
 		const protocol = currentAddress.protocol()
@@ -82,5 +80,3 @@ export namespace CockpitDataAccess {
 	function address(): Connection.Address {
 		return AddressRegister.defaultAddress()
 	}
-	
-}

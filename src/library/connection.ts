@@ -1,24 +1,20 @@
-import { Url } from "./url"
+import { URL } from "@/library/types"
 
-export namespace Connection {
+export type Protocol = string
+export type ApiToken = string
 
-	export type Protocol = string
-	export type ApiToken = string
+export interface Address {
+	protocol(context?: Context): Protocol
+	host(context?: Context): URL
+	token(): ApiToken
+}
 
-	export interface Address {
-		protocol(context?: Context): Protocol
-		host(context?: Context): Url
-		token(): ApiToken
-	}
+export enum Environment {
+	Live,
+	Development
+}
 
-	export enum Environment {
-		Live,
-		Development
-	}
-
-	export enum Context {
-		Server,
-		Client
-	}
-
+export enum Context {
+	Server,
+	Client
 }

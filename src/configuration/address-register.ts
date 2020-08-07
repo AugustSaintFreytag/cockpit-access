@@ -1,4 +1,4 @@
-import { Connection } from "../library/connection"
+import * as Connection from "@/library/connection"
 
 class AddressRegister {
 

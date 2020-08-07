@@ -1,4 +1,4 @@
-import { Url } from "../library/url"
+import { URL } from "@/library/types"
 
 // Options
 
@@ -60,7 +60,7 @@ export class CockpitImageRequest {
 
 	// Formed Options
 
-	options(source: Url): CockpitImageOptions.Parameters {
+	options(source: URL): CockpitImageOptions.Parameters {
 		return {
 			src: source,
 			m: this.mode,
@@ -90,7 +90,7 @@ export namespace CockpitImageOptions {
 	}
 
 	export interface Parameters {
-		src?: Url,
+		src?: URL,
 		m?: string,
 		w?: number,
 		h?: number,

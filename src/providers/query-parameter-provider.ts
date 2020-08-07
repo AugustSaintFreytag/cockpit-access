@@ -1,10 +1,10 @@
-import { UrlComponent } from "../library/url"
+import { URLComponent } from "@/library/types"
 
 export namespace QueryParameterProvider {
 
 	export type ParameterDictionary = {[key: string]: string|number|boolean}
 
-	export function joinedParameters(parameters: ParameterDictionary): UrlComponent {
+	export function joinedParameters(parameters: ParameterDictionary): URLComponent {
 		const keys = Object.keys(parameters)
 
 		return keys.reduce((pairs: string[], parameterKey: string) => {

@@ -9,11 +9,10 @@
 	"license": "MIT",
 	"private": false,
 	"devDependencies": {
-		"@types/node": "~11.13",
+		"@types/node": "~14.0",
 		"typescript": "~3.9"
 	},
-	"scripts": {},
 	"dependencies": {
-		"axios": "^0.18.0"
+		"axios": "~0.19"
 	}
 }

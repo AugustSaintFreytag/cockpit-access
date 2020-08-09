@@ -1,6 +1,6 @@
 import { Dictionary } from "@/library/types"
 
-export default interface CockpitRequestOptions {
+export interface CockpitRequestOptions {
 
 	filter?: Dictionary<any>
 	fields?: Dictionary<number|undefined>

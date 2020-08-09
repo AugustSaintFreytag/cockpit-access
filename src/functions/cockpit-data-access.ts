@@ -1,8 +1,8 @@
-import AddressRegister from "@/configuration/address-register"
-import CockpitError from "@/library/cockpit-error"
+import { addressRegister } from "@/configuration/address-register"
+import { CockpitError } from "@/library/cockpit-error"
 import * as Connection from "@/library/connection"
 import { Dictionary, URL } from "@/library/types"
-import CockpitRequestOptions from "@/models/cockpit-request-options"
+import { CockpitRequestOptions } from "@/models/cockpit-request-options"
 import { AnyCockpitResponse, CockpitCollectionResponse, CockpitSingletonResponse } from "@/models/cockpit-response"
 import axios from "axios"
 import * as path from "path"
@@ -78,5 +78,5 @@ function preparedOptions(baseOptions: AnyRequestObject, requestOptions: AnyReque
 }
 
 function address(): Connection.Address {
-	return AddressRegister.defaultAddress()
+	return addressRegister.defaultAddress()
 }

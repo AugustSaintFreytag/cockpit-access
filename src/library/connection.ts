@@ -1,12 +1,12 @@
 import { URL } from "@/library/types"
 
 export type Protocol = string
-export type ApiToken = string
+export type APIToken = string
 
 export interface Address {
 	protocol(context?: Context): Protocol
 	host(context?: Context): URL
-	token(): ApiToken
+	token(): APIToken
 }
 
 export enum Environment {

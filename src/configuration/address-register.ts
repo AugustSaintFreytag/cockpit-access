@@ -1,6 +1,6 @@
 import * as Connection from "@/library/connection"
 
-class AddressRegister {
+export class AddressRegister {
 
 	private storedDefaultAddress: Connection.Address|undefined
 	private storedAddresses: {[key: string]: Connection.Address} = {}
@@ -51,4 +51,4 @@ class AddressRegister {
 
 }
 
-export default new AddressRegister()
+export const addressRegister = new AddressRegister()

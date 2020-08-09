@@ -1,1 +1,1 @@
-export default class CockpitError extends Error {}
+export class CockpitError extends Error {}

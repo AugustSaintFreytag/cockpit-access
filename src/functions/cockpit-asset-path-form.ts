@@ -1,5 +1,5 @@
 import { addressRegister } from "@/configuration/address-register"
-import { QueryParameterProvider } from "@/functions/query-parameter-form"
+import * as QueryParameterProvider from "@/functions/query-parameter-form"
 import * as Connection from "@/library/connection"
 import { URL, URLComponent } from "@/library/types"
 import { CockpitImageRequest } from "@/models/cockpit-image-request"

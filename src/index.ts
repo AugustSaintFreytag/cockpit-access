@@ -1,8 +1,8 @@
 import AddressRegister from "@/configuration/address-register"
-import * as CockpitAssetPathProvider from "@/functions/cockpit-asset-path-provider"
+import * as CockpitAssetPathForm from "@/functions/cockpit-asset-path-form"
 import * as CockpitDataAccess from "@/functions/cockpit-data-access"
-import * as CockpitDateConverter from "@/functions/cockpit-date-converter"
-import { QueryParameterProvider } from "@/functions/query-parameter-provider"
+import * as CockpitDateConversion from "@/functions/cockpit-date-conversion"
+import * as QueryParameterForm from "@/functions/query-parameter-form"
 import CockpitError from "@/library/cockpit-error"
 import * as Connection from "@/library/connection"
 import { CockpitEntry } from "@/models/cockpit-entry"
@@ -13,10 +13,10 @@ import CockpitRequestOptions from "@/models/cockpit-request-options"
 import { AnyCockpitResponse, CockpitCollectionResponse, CockpitImageResponse, CockpitSingletonResponse } from "@/models/cockpit-response"
 
 export {
-	CockpitAssetPathProvider,
+	CockpitAssetPathForm,
 	CockpitDataAccess,
-	CockpitDateConverter,
-	QueryParameterProvider,
+	CockpitDateConversion,
+	QueryParameterForm,
 
 	// Configuration
 	AddressRegister,

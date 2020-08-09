@@ -16,6 +16,6 @@
 		"axios": "~0.19"
 	},
 	"scripts": {
-		"postinstall": "rm -r ./dist && tsc --outDir ./dist"
+		"postinstall": "rm -r ./dist; rm -r ./types; tsc --outDir ./dist"
 	}
 }

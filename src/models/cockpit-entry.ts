@@ -6,6 +6,6 @@ export interface CockpitEntry {
 	_by: UUID
 	_mby?: UUID
 	_created: number
-	_modified?: number
+	_modified?: number|undefined
 	
 }

@@ -1,4 +1,4 @@
-import { Dictionary } from "@/library/types";
+import { Dictionary } from "@/library/types"
 
 export default interface CockpitRequestOptions {
 

@@ -1,6 +1,6 @@
 import { UUID } from "@/library/types"
 import { CockpitEntry } from "../models/cockpit-entry"
-import * as CockpitDateConverter from "../providers/cockpit-date-converter"
+import * as CockpitDateConverter from "../functions/cockpit-date-converter"
 
 export class CockpitMetaData {
 	

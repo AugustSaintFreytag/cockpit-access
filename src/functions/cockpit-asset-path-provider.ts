@@ -1,8 +1,8 @@
 import Addresses from "@/configuration/address-register"
 import * as Connection from "@/library/connection"
 import { URL, URLComponent } from "@/library/types"
-import { CockpitImageRequest } from "../models/cockpit-image-request"
-import { QueryParameterProvider } from "./query-parameter-provider"
+import { CockpitImageRequest } from "@/models/cockpit-image-request"
+import { QueryParameterProvider } from "@/functions/query-parameter-provider"
 
 function address(): Connection.Address {
 	return Addresses.defaultAddress()

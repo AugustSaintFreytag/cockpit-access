@@ -1,6 +1,6 @@
+import { Dictionary } from "@/library/types"
 import { CockpitEntry } from "@/models/cockpit-entry"
 import { CockpitFieldDefinition } from "@/models/cockpit-field-definition"
-import { Dictionary } from "@/library/types"
 
 export type AnyCockpitResponse = any
 

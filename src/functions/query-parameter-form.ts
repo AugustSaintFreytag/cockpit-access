@@ -1,6 +1,6 @@
-import { URLComponent } from "@/library/types"
+import { Dictionary, URLComponent } from "@/library/types"
 
-export type ParameterDictionary = {[key: string]: string|number|boolean}
+export type ParameterDictionary = Dictionary<string|number|boolean>
 
 export function joinedParameters(parameters: ParameterDictionary): URLComponent {
 	const keys = Object.keys(parameters)

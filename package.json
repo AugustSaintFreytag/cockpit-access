@@ -16,6 +16,7 @@
 		"axios": "~0.19"
 	},
 	"scripts": {
-		"postinstall": "rm -r ./dist; rm -r ./types; tsc --outDir ./dist"
+		"build": "rm -r ./dist; rm -r ./types; tsc --outDir ./dist",
+		"postinstall": "yarn run build"
 	}
 }

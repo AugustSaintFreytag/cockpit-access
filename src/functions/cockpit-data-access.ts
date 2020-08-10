@@ -7,7 +7,6 @@ import { AnyCockpitResponse, CockpitCollectionResponse, CockpitSingletonResponse
 import axios from "axios"
 import * as path from "path"
 
-
 type AnyRequestObject = Dictionary<any>
 
 // Options

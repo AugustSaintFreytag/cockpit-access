@@ -2,19 +2,21 @@
 	"name": "cockpit-access",
 	"version": "1.0.0",
 	"description": "A thin data access layer, models and interfaces for Cockpit CMS.",
-	"main": "src/index.ts",
+	"main": "dist/index.js",
+	"typings": "types/index.d.ts",
 	"repository": "git@gitlab.com:apricum/cockpit-access.git",
 	"author": "August Saint Freytag <night@apricummedia.com>",
 	"license": "MIT",
 	"private": false,
 	"devDependencies": {
-		"@types/node": "~14.0",
-		"typescript": "~3.9"
+		"@types/node": "~14.0"
 	},
 	"dependencies": {
-		"axios": "~0.19"
+		"axios": "~0.19",
+		"typescript": "~3.9"
 	},
 	"scripts": {
-		"build": "rm -r ./dist; rm -r ./types; tsc --outDir ./dist"
+		"build": "rm -r ./dist; rm -r ./types; tsc --outDir ./dist",
+		"postinstall": "yarn run build"
 	}
 }

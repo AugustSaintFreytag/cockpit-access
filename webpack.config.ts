@@ -1,4 +1,5 @@
 import path from "path"
+import PathsPlugin from "tsconfig-paths-webpack-plugin"
 import { Configuration, Rule } from "webpack"
 
 // Paths
@@ -26,9 +27,9 @@ const configuration: Configuration = {
 	resolve: {
 		extensions: [".ts", ".js"],
 		modules: ["node_modules"],
-		alias: {
-			"@": sourceDirectoryPath
-		}
+		plugins: [
+			new PathsPlugin()
+		]
 	},
 	output: {
 		filename: "index.js",

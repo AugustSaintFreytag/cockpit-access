@@ -1,4 +1,4 @@
-import * as Connection from "@/library/connection"
+import * as Connection from "library/connection"
 
 export class AddressRegister {
 

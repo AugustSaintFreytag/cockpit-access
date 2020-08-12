@@ -1,10 +1,12 @@
-export default interface CockpitRequestOptions {
+import { Dictionary } from "@/library/types"
 
-	filter?: {[key: string]: any}
-	fields?: {[key: string]: number|undefined}
+export interface CockpitRequestOptions {
+
+	filter?: Dictionary<any>
+	fields?: Dictionary<number|undefined>
 	limit?: number
 	skip?: number
-	sort?: {[key: string]: number|undefined}
+	sort?: Dictionary<number|undefined>
 	populate?: boolean
 	lang?: string
 

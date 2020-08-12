@@ -1,4 +1,4 @@
-import { Dictionary, URLComponent } from "library/types"
+import { Dictionary, URLComponent } from "@/library/types"
 
 export type ParameterDictionary = Dictionary<string|number|boolean>
 

@@ -1,4 +1,4 @@
-import { URL } from "library/types"
+import { URL } from "@/library/types"
 
 // Options
 

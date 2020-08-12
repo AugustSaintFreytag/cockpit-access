@@ -1,8 +1,8 @@
-import { addressRegister } from "configuration/address-register"
-import { joinedParameters, ParameterDictionary } from "functions/query-parameter-form"
-import { Address, Context } from "library/connection"
-import { URL, URLComponent } from "library/types"
-import { CockpitImageRequest } from "models/cockpit-image-request"
+import { addressRegister } from "@/configuration/address-register"
+import { joinedParameters, ParameterDictionary } from "@/functions/query-parameter-form"
+import { Address, Context } from "@/library/connection"
+import { URL, URLComponent } from "@/library/types"
+import { CockpitImageRequest } from "@/models/cockpit-image-request"
 
 function address(): Address {
 	return addressRegister.defaultAddress()

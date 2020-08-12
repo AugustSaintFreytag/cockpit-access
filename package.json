@@ -2,27 +2,22 @@
 	"name": "cockpit-access",
 	"version": "1.0.0",
 	"description": "A thin data access layer, models and interfaces for Cockpit CMS.",
-	"main": "dist/index.js",
-	"typings": "types/index.d.ts",
+	"main": "dist/src/index.js",
+	"typings": "types/src/index.d.ts",
 	"repository": "git@gitlab.com:apricum/cockpit-access.git",
 	"author": "August Saint Freytag <night@apricummedia.com>",
 	"license": "MIT",
 	"private": false,
 	"devDependencies": {
 		"@types/node": "^14.0.27",
-		"@types/webpack": "^4.41.21",
 		"ts-node": "^8.10.2",
-		"tsconfig-paths-webpack-plugin": "^3.3.0",
-		"typescript": "^3.9.7",
-		"webpack-cli": "^3.3.12"
+		"typescript": "^3.9.7"
 	},
 	"dependencies": {
-		"axios": "~0.19",
-		"ts-loader": "~8.0",
-		"webpack": "~4.44"
+		"axios": "~0.19"
 	},
 	"scripts": {
-		"build": "webpack",
-		"prepare": "webpack"
+		"build": "rm -r ./dist ./types; tsc",
+		"prepare": "rm -r ./dist ./types; tsc"
 	}
 }

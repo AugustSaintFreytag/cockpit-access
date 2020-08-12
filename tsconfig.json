@@ -22,13 +22,8 @@
 		],
 		
 		// Paths
-		"outDir": "./dist",
-		"baseUrl": "./src",
-		"paths": {
-			"@/*": [
-				"./*"
-			]
-		}
+		"outDir": "dist",
+		"baseUrl": "src"
 	},
 	"exclude": ["node_modules*"]
 }

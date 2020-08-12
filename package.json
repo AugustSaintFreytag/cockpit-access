@@ -10,13 +10,14 @@
 	"private": false,
 	"devDependencies": {
 		"@types/node": "^14.0.27",
+		"tscpaths": "^0.0.9",
 		"typescript": "^3.9.7"
 	},
 	"dependencies": {
 		"axios": "~0.19"
 	},
 	"scripts": {
-		"build": "rm -r ./dist ./types; tsc",
-		"prepare": "rm -r ./dist ./types; tsc"
+		"build": "rm -r dist types; tsc && tscpaths -p ./tsconfig.json -s ./src -o ./dist",
+		"prepare": "rm -r dist types; tsc && tscpaths -p ./tsconfig.json -s ./src -o ./dist"
 	}
 }

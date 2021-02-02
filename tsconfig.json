@@ -1,13 +1,10 @@
 {
 	"compilerOptions": {
 		"target": "esnext",
-		"module": "commonjs",
+		"module": "esnext",
 		"moduleResolution": "node",
 
 		"sourceMap": true,
-		"declaration": true,
-		"declarationMap": true,
-		"declarationDir": "types",
 		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
 
@@ -23,5 +20,7 @@
 			"@/*": ["./*"]
 		}
 	},
-	"exclude": ["node_modules*"]
+	"exclude": [
+		"node_modules*"
+	]
 }

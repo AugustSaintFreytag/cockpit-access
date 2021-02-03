@@ -10,7 +10,7 @@
 	"main": "dist/index.js",
 	"types": "dist/types/index.d.ts",
 	"scripts": {
-		"build": "yarn install --skip-builds; yarn run build-clean; yarn run build-sources; yarn run build-declarations",
+		"build": "yarn run build-clean; yarn run build-sources; yarn run build-declarations",
 		"build-clean": "rm -r dist/*",
 		"build-sources": "parcel build src/index.ts",
 		"build-declarations": "tsc --emitDeclarationOnly",

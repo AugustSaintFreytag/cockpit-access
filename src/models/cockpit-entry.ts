@@ -1,4 +1,4 @@
-import { UUID } from "@/library/types"
+import { UUID } from "~/library/types"
 
 export interface CockpitEntry {
 

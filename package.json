@@ -14,7 +14,7 @@
 		"build-clean": "rm -r dist/*",
 		"build-sources": "parcel build src/index.ts",
 		"build-declarations": "tsc --emitDeclarationOnly",
-		"postinstall": "yarn run build"
+		"prepare": "yarn run build"
 	},
 	"dependencies": {
 		"axios": "^0.21.1"

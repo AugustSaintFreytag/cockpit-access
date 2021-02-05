@@ -16,7 +16,7 @@
 			"@types/node"
 		],
 		
-		"outDir": "dist/",
+		"outDir": "dist",
 		"rootDir": "src",
 		"baseUrl": "src",
 		"paths": {
@@ -27,11 +27,5 @@
 			{"transform": "typescript-transform-paths"},
 			{"transform": "typescript-transform-paths", "afterDeclarations": true}
 		]
-	},
-	"include": [
-		"./src/**/*"
-	],
-	"exclude": [
-		"node_modules"
-	]
+	}
 }

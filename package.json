@@ -6,22 +6,22 @@
 	"author": "August Saint Freytag <night@apricummedia.com>",
 	"license": "MIT",
 	"private": true,
+	"type": "module",
 	"source": "src/index.ts",
 	"main": "dist/index.js",
 	"types": "dist/types/index.d.ts",
 	"scripts": {
-		"bundle": "yarn run bundle-clean; yarn run bundle-sources; yarn run bundle-declarations",
-		"bundle-clean": "rm -r dist/*",
-		"bundle-sources": "parcel build src/index.ts",
-		"bundle-declarations": "tsc --emitDeclarationOnly"
+		"build": "yarn run build-clean; yarn run build-sources",
+		"build-clean": "/bin/sh -c 'rm -r dist/*' > /dev/null",
+		"build-sources": "ttsc",
+		"postinstall": "if [ ! -e .development ]; then yarn run build; fi"
 	},
 	"dependencies": {
-		"@rollup/plugin-typescript": "^8.1.1",
 		"axios": "^0.21.1",
-		"rollup": "^2.38.5",
-		"rollup-plugin-typescript-paths": "^1.2.2",
-		"tslib": "^2.1.0",
-		"typescript": "^4.1.0"
+		"ts-node": "^9.1.1",
+		"ttypescript": "^1.5.12",
+		"typescript": "^4.1.0",
+		"typescript-transform-paths": "^2.2.3"
 	},
 	"devDependencies": {
 		"@types/node": "^14.14.22"

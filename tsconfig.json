@@ -6,6 +6,7 @@
 
 		"sourceMap": true,
 		"declaration": true,
+		"declarationDir": "dist",
 		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
 
@@ -15,14 +16,22 @@
 			"@types/node"
 		],
 		
-		"outDir": "dist",
+		"outDir": "dist/",
 		"rootDir": "src",
 		"baseUrl": "src",
 		"paths": {
 			"~/*": ["./*"]
-		}
+		},
+
+		"plugins": [
+			{"transform": "typescript-transform-paths"},
+			{"transform": "typescript-transform-paths", "afterDeclarations": true}
+		]
 	},
 	"include": [
 		"./src/**/*"
 	],
+	"exclude": [
+		"node_modules"
+	]
 }

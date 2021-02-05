@@ -3,3 +3,4 @@ types
 
 .*cache*
 *.log
+.development

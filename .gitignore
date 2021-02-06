@@ -1,2 +1,6 @@
 dist
 types
+
+.*cache*
+*.log
+.development

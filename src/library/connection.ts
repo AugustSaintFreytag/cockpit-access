@@ -1,4 +1,4 @@
-import { URL } from "@/library/types"
+import { URL } from "~/library/types"
 
 export type Protocol = string
 export type APIToken = string

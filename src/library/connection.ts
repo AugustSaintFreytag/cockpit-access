@@ -10,8 +10,8 @@ export interface Address {
 }
 
 export enum Environment {
-	Live,
-	Development
+	Live = "live",
+	Development = "development"
 }
 
 export enum Context {

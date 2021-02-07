@@ -1,11 +1,12 @@
 import { URL } from "~/library/types"
+import { Filter as CockpitImageFilter, Mode as CockpitImageMode, Parameters as CockpitImageParameters } from "~/models/cockpit-image-options"
 
 // Options
 
 export class CockpitImageRequest {
 
-	mode: CockpitImageOptions.Mode = CockpitImageOptions.Mode.BestFit
-	filters: CockpitImageOptions.Filter[] = []
+	mode: CockpitImageMode = CockpitImageMode.BestFit
+	filters: CockpitImageFilter[] = []
 	
 	width: number|undefined
 	height: number|undefined
@@ -16,8 +17,8 @@ export class CockpitImageRequest {
 	isBase64Encoded: boolean = false
 
 	constructor({mode, filters, width, height, quality, returnsImageData, includesDomainPath, isBase64Encoded}: {
-		mode?: CockpitImageOptions.Mode
-		filters?: CockpitImageOptions.Filter[]
+		mode?: CockpitImageMode
+		filters?: CockpitImageFilter[]
 		width?: number
 		height?: number
 		quality?: number
@@ -60,7 +61,7 @@ export class CockpitImageRequest {
 
 	// Formed Options
 
-	options(source: URL): CockpitImageOptions.Parameters {
+	options(source: URL): CockpitImageParameters {
 		return {
 			src: source,
 			m: this.mode,
@@ -71,33 +72,6 @@ export class CockpitImageRequest {
 			d: this.includesDomainPath,
 			b64: this.isBase64Encoded
 		}
-	}
-
-}
-
-// Library
-
-export namespace CockpitImageOptions {
-
-	export type Filter = string
-
-	export enum Mode {
-		Thumbnail = "thumbnail",
-		BestFit = "bestFit",
-		Resize = "resize",
-		FitToWidth = "fitToWidth",
-		FitToHeight = "fitToHeight"
-	}
-
-	export interface Parameters {
-		src?: URL,
-		m?: string,
-		w?: number,
-		h?: number,
-		q?: number,
-		o?: boolean,
-		d?: boolean,
-		b64?: boolean
 	}
 
 }

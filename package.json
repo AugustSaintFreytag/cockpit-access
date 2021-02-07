@@ -6,7 +6,6 @@
 	"author": "August Saint Freytag <night@apricummedia.com>",
 	"license": "MIT",
 	"private": true,
-	"type": "module",
 	"source": "src/index.ts",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",

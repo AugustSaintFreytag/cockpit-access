@@ -18,7 +18,7 @@ function pathPrefix() {
 }
 
 export function cockpitAsset(component: URLComponent): URL {
-	return `${pathPrefix()}${component}`
+	return `${pathPrefix()}/${component}`
 }
 
 export function cockpitImage(component: URLComponent, imageRequest: CockpitImageRequest): URL {

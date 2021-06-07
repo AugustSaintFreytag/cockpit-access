@@ -17,8 +17,12 @@ function pathPrefix() {
 	return `${currentAddress.protocol(Context.Client)}://${currentAddress.host(Context.Client)}`
 }
 
+function assetPathComponent() {
+	return "storage/uploads"
+}
+
 export function cockpitAsset(component: URLComponent): URL {
-	return `${pathPrefix()}/${component}`
+	return `${pathPrefix()}/${assetPathComponent()}${component}`
 }
 
 export function cockpitImage(component: URLComponent, imageRequest: CockpitImageRequest): URL {

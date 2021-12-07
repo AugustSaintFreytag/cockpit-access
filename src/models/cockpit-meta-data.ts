@@ -1,6 +1,6 @@
 import * as CockpitDateConverter from "~/functions/cockpit-date-conversion"
 import { UUID } from "~/library/types"
-import { CockpitEntry } from "~/models/cockpit-entry"
+import { CockpitRecord } from "~/models/cockpit-record"
 
 export class CockpitMetaData {
 	id: UUID
@@ -11,7 +11,7 @@ export class CockpitMetaData {
 	created: Date
 	modified: Date | undefined
 
-	constructor(entry: CockpitEntry) {
+	constructor(entry: CockpitRecord) {
 		this.id = entry._id
 		this.creator = entry._by
 		this.editor = entry._mby || undefined

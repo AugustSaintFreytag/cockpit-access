@@ -1,5 +1,5 @@
 import { Dictionary } from "~/library/types"
-import { CockpitEntry } from "~/models/cockpit-entry"
+import { CockpitRecord } from "~/models/cockpit-record"
 import { CockpitFieldDefinition } from "~/models/cockpit-field-definition"
 
 export type AnyCockpitResponse = any
@@ -7,7 +7,7 @@ export type AnyCockpitResponse = any
 export interface CockpitCollectionResponse extends AnyCockpitResponse {
 	total: number
 	fields: Dictionary<CockpitFieldDefinition>
-	entries: CockpitEntry[]
+	entries: CockpitRecord[]
 }
 
 export interface CockpitSingletonResponse extends AnyCockpitResponse {

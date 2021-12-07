@@ -1,6 +1,6 @@
 import { UUID } from "~/library/types"
 
-export interface CockpitEntry {
+export interface CockpitRecord {
 	_id: UUID
 	_by: UUID
 	_mby?: UUID

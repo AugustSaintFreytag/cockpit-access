@@ -1,6 +1,6 @@
-export function dateFromString(string: string): Date|undefined {
+export function dateFromString(string: string): Date | undefined {
 	const date = new Date(string)
-	
+
 	if (isNaN(date.getDate())) {
 		return undefined
 	}
@@ -8,7 +8,7 @@ export function dateFromString(string: string): Date|undefined {
 	return date
 }
 
-export function dateFromTimestamp(timestamp: number): Date|undefined {
+export function dateFromTimestamp(timestamp: number): Date | undefined {
 	const date = new Date(timestamp * 1000)
 
 	if (isNaN(date.getDate())) {
@@ -18,12 +18,12 @@ export function dateFromTimestamp(timestamp: number): Date|undefined {
 	return date
 }
 
-export function stringFromDate(date: Date): string|undefined {
+export function stringFromDate(date: Date): string | undefined {
 	if (isNaN(date.valueOf())) {
 		return undefined
 	}
 
-	return `${date.getFullYear()}-${stringWithLeadingZero(date.getMonth()+1)}-${date.getDate()}`
+	return `${date.getFullYear()}-${stringWithLeadingZero(date.getMonth() + 1)}-${date.getDate()}`
 }
 
 function stringWithLeadingZero(number: number): string {

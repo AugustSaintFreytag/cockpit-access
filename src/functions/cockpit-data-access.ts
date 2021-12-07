@@ -56,16 +56,16 @@ function preparedUrl(route: string): URL {
 	const protocol = currentAddress.protocol()
 	const host = currentAddress.host()
 	const token = currentAddress.token()
-	
+
 	return `${protocol}://${path.join(host, route)}?token=${token}`
 }
 
 function preparedOptions(baseOptions: AnyRequestObject, requestOptions: AnyRequestObject): AnyRequestObject {
 	const mergedOptions = baseOptions
-	
+
 	for (const key in requestOptions) {
 		const value = requestOptions[key]
-		
+
 		if (typeof value === "object" && value !== null) {
 			mergedOptions[key] = preparedOptions(mergedOptions[key] || {}, value)
 		} else {

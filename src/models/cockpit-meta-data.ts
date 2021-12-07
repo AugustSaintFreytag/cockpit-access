@@ -3,14 +3,13 @@ import { UUID } from "~/library/types"
 import { CockpitEntry } from "~/models/cockpit-entry"
 
 export class CockpitMetaData {
-	
 	id: UUID
-	
+
 	creator: UUID
-	editor: UUID|undefined
+	editor: UUID | undefined
 
 	created: Date
-	modified: Date|undefined
+	modified: Date | undefined
 
 	constructor(entry: CockpitEntry) {
 		this.id = entry._id
@@ -27,5 +26,4 @@ export class CockpitMetaData {
 			this.modified = CockpitDateConverter.dateFromTimestamp(entry._modified)
 		}
 	}
-
 }

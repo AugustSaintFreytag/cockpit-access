@@ -12,10 +12,8 @@
 
 		"strict": true,
 
-		"types": [
-			"@types/node"
-		],
-		
+		"types": ["@types/node"],
+
 		"outDir": "dist",
 		"rootDir": "src",
 		"baseUrl": "src",
@@ -23,9 +21,6 @@
 			"~/*": ["./*"]
 		},
 
-		"plugins": [
-			{"transform": "typescript-transform-paths"},
-			{"transform": "typescript-transform-paths", "afterDeclarations": true}
-		]
+		"plugins": [{ "transform": "typescript-transform-paths" }, { "transform": "typescript-transform-paths", "afterDeclarations": true }]
 	}
 }

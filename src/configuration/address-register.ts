@@ -1,9 +1,8 @@
 import * as Connection from "~/library/connection"
 
 export class AddressRegister {
-
-	private storedDefaultAddress: Connection.Address|undefined
-	private storedAddresses: {[key: string]: Connection.Address} = {}
+	private storedDefaultAddress: Connection.Address | undefined
+	private storedAddresses: { [key: string]: Connection.Address } = {}
 
 	// Access
 
@@ -48,7 +47,6 @@ export class AddressRegister {
 	unsetDefault() {
 		this.storedDefaultAddress = undefined
 	}
-
 }
 
 export const addressRegister = new AddressRegister()

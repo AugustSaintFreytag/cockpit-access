@@ -11,12 +11,12 @@ export enum Mode {
 }
 
 export interface Parameters {
-	src?: URL,
-	m?: string,
-	w?: number,
-	h?: number,
-	q?: number,
-	o?: boolean,
-	d?: boolean,
+	src?: URL
+	m?: string
+	w?: number
+	h?: number
+	q?: number
+	o?: boolean
+	d?: boolean
 	b64?: boolean
 }

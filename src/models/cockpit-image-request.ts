@@ -4,19 +4,27 @@ import { Filter as CockpitImageFilter, Mode as CockpitImageMode, Parameters as C
 // Options
 
 export class CockpitImageRequest {
-
 	mode: CockpitImageMode = CockpitImageMode.BestFit
 	filters: CockpitImageFilter[] = []
-	
-	width: number|undefined
-	height: number|undefined
-	quality: number|undefined
+
+	width: number | undefined
+	height: number | undefined
+	quality: number | undefined
 
 	returnsImageData: boolean = true
 	includesDomainPath: boolean = false
 	isBase64Encoded: boolean = false
 
-	constructor({mode, filters, width, height, quality, returnsImageData, includesDomainPath, isBase64Encoded}: {
+	constructor({
+		mode,
+		filters,
+		width,
+		height,
+		quality,
+		returnsImageData,
+		includesDomainPath,
+		isBase64Encoded
+	}: {
 		mode?: CockpitImageMode
 		filters?: CockpitImageFilter[]
 		width?: number
@@ -33,7 +41,7 @@ export class CockpitImageRequest {
 		if (filters) {
 			this.filters = filters
 		}
-		
+
 		if (width) {
 			this.width = width
 		}
@@ -41,7 +49,7 @@ export class CockpitImageRequest {
 		if (height) {
 			this.height = height
 		}
-		
+
 		if (quality) {
 			this.quality = quality
 		}
@@ -49,11 +57,11 @@ export class CockpitImageRequest {
 		if (returnsImageData !== undefined) {
 			this.returnsImageData = returnsImageData
 		}
-		
+
 		if (includesDomainPath !== undefined) {
 			this.includesDomainPath = includesDomainPath
 		}
-		
+
 		if (isBase64Encoded !== undefined) {
 			this.isBase64Encoded = isBase64Encoded
 		}
@@ -73,5 +81,4 @@ export class CockpitImageRequest {
 			b64: this.isBase64Encoded
 		}
 	}
-
 }

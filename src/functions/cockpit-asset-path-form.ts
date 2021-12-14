@@ -12,25 +12,25 @@ function token() {
 	return address().token()
 }
 
-function pathPrefix() {
+function pathPrefix(context: Context) {
 	const currentAddress = address()
-	return `${currentAddress.protocol(Context.Client)}://${currentAddress.host(Context.Client)}`
+	return `${currentAddress.protocol(context)}://${currentAddress.host(context)}`
 }
 
 function assetPathComponent() {
 	return "storage/uploads"
 }
 
-export function cockpitAsset(component: URLComponent): URL {
-	return `${pathPrefix()}/${assetPathComponent()}${component}`
+export function cockpitAsset(component: URLComponent, context: Context = Context.Client): URL {
+	return `${pathPrefix(context)}/${assetPathComponent()}${component}`
 }
 
-export function cockpitImage(component: URLComponent, imageRequest: CockpitImageRequest): URL {
+export function cockpitImage(component: URLComponent, imageRequest: CockpitImageRequest, context: Context = Context.Client): URL {
 	const sourcePath = component
 	const imageRequestOptions = imageRequest.options(sourcePath) as ParameterDictionary
 
 	const joinedImageRequestOptions = joinedParameters(imageRequestOptions)
-	const imageUrl: URL = `${pathPrefix()}/api/cockpit/image?token=${token()}&${joinedImageRequestOptions}`
+	const imageUrl: URL = `${pathPrefix(context)}/api/cockpit/image?token=${token()}&${joinedImageRequestOptions}`
 
 	return imageUrl
 }

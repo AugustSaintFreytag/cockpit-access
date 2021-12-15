@@ -4,6 +4,8 @@ import { Address, Context } from "~/library/connection"
 import { URL, URLComponent } from "~/library/types"
 import { CockpitImageRequest } from "~/models/cockpit-image-request"
 
+// Configuration
+
 function address(): Address {
 	return addressRegister.defaultAddress()
 }
@@ -17,20 +19,26 @@ function pathPrefix(context: Context) {
 	return `${currentAddress.protocol(context)}://${currentAddress.host(context)}`
 }
 
-function assetPathComponent() {
-	return "storage/uploads"
-}
+// Path Form
 
 export function cockpitAsset(component: URLComponent, context: Context = Context.Client): URL {
-	return `${pathPrefix(context)}/${assetPathComponent()}${component}`
+	return `${pathPrefix(context)}/storage/uploads${standardizedPathComponent(component)}`
 }
 
 export function cockpitImage(component: URLComponent, imageRequest: CockpitImageRequest, context: Context = Context.Client): URL {
-	const sourcePath = component
-	const imageRequestOptions = imageRequest.options(sourcePath) as ParameterDictionary
-
+	const imageRequestOptions = imageRequest.options(standardizedPathComponent(component)) as ParameterDictionary
 	const joinedImageRequestOptions = joinedParameters(imageRequestOptions)
 	const imageUrl: URL = `${pathPrefix(context)}/api/cockpit/image?token=${token()}&${joinedImageRequestOptions}`
 
 	return imageUrl
+}
+
+// Utility
+
+function standardizedPathComponent(component: string): string {
+	if (component[0] === "/") {
+		return component
+	}
+
+	return "/" + component
 }

@@ -37,7 +37,7 @@ export function cockpitAssetComponent(component: URLComponent): URLComponent {
 /** Returns the full path to an image managed by Cockpit, including a prefix 
  * suitable to be accessed from the given context (default: Client). */
 export function cockpitImage(component: URLComponent, imageRequest: CockpitImageRequest, context: Context = Context.Client): URL {
-	return `${pathPrefix(context)}/${cockpitImageComponent(component, imageRequest)}`
+	return `${pathPrefix(context)}${cockpitImageComponent(component, imageRequest)}`
 }
 
 /** Returns the local path component to an image managed by Cockpit. */

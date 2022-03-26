@@ -10,7 +10,7 @@
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"scripts": {
-		"build": "yarn run build-clean & yarn run build-sources",
+		"build": "yarn run build-clean && yarn run build-sources",
 		"build-deferred": "scripts/build-deferred.sh",
 		"build-clean": "rm -r dist/* &> /dev/null || true",
 		"build-sources": "ttsc",

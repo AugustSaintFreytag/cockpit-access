@@ -12,9 +12,9 @@
 	"scripts": {
 		"build": "yarn run build-clean & yarn run build-sources",
 		"build-deferred": "scripts/build-deferred.sh",
-		"build-clean": "rm -r dist/* & exit 0",
+		"build-clean": "rm -r dist/* &> /dev/null || true",
 		"build-sources": "ttsc",
-		"postinstall": "stat .development && yarn run build-deferred; true"
+		"postinstall": "[[ -e .development ]] || yarn run build-deferred || true"
 	},
 	"dependencies": {
 		"axios": "^0.21.1"

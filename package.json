@@ -14,7 +14,7 @@
 		"build-deferred": "scripts/build-deferred.sh",
 		"build-clean": "rm -r dist/* || true",
 		"build-sources": "ttsc",
-		"postinstall": "[[ -e .development ]] || yarn run build-deferred || true"
+		"prepack": "[[ -e .development ]] || yarn run build-deferred || true"
 	},
 	"dependencies": {
 		"isomorphic-fetch": "^3.0.0"

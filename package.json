@@ -12,7 +12,7 @@
 	"scripts": {
 		"build": "yarn run build-clean && yarn run build-sources",
 		"build-deferred": "scripts/build-deferred.sh",
-		"build-clean": "rm -r dist/* &> /dev/null || true",
+		"build-clean": "rm -r dist/* || true",
 		"build-sources": "ttsc",
 		"postinstall": "[[ -e .development ]] || yarn run build-deferred || true"
 	},

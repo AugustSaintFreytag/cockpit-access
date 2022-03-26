@@ -10,19 +10,25 @@
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"scripts": {
-		"build": "yarn run build-clean & yarn run build-sources",
+		"build": "$npm_execpath run build-clean && $npm_execpath run build-sources",
 		"build-deferred": "scripts/build-deferred.sh",
-		"build-clean": "rm -r dist/* & exit 0",
+		"build-clean": "rm -r dist/* || true",
 		"build-sources": "ttsc",
-		"postinstall": "stat .development && yarn run build-deferred; true"
+		"prepack": "$npm_execpath run build-deferred || true"
 	},
 	"dependencies": {
-		"axios": "^0.21.1"
+		"isomorphic-fetch": "^3.0.0"
 	},
 	"devDependencies": {
+		"@types/isomorphic-fetch": "^0.0.36",
 		"@types/node": "^14.14.22",
+		"ts-node": "^10.7.0",
 		"ttypescript": "^1.5.12",
 		"typescript": "^4.1.3",
 		"typescript-transform-paths": "^2.2.3"
-	}
+	},
+	"packageManager": "yarn@3.2.0",
+	"files": [
+		"dist"
+	]
 }

@@ -4,8 +4,8 @@ import * as Connection from "~/library/connection"
 import { Dictionary, URL } from "~/library/types"
 import { CockpitRequestOptions } from "~/models/cockpit-request-options"
 import { AnyCockpitResponse, CockpitCollectionResponse, CockpitSingletonResponse } from "~/models/cockpit-response"
-import axios from "axios"
-import * as path from "path"
+import path from "path"
+import fetch from "isomorphic-fetch"
 
 type AnyRequestObject = Dictionary<any>
 
@@ -36,9 +36,12 @@ export async function data(route: string, requestOptions?: CockpitRequestOptions
 
 	try {
 		const options = preparedOptions(defaultOptions(), requestOptions || {})
-		const serverResponse = await axios.post(url, options)
+		const response = await fetch(url, {
+			method: "POST",
+			body: JSON.stringify(options)
+		})
 
-		return serverResponse.data as CockpitCollectionResponse
+		return await response.json() as CockpitCollectionResponse
 	} catch (err) {
 		throw new CockpitError(`Could not get response from cockpit for url '${obfuscatedUrl(url)}'. ${err}`)
 	}

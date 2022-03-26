@@ -10,11 +10,11 @@
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"scripts": {
-		"build": "yarn run build-clean && yarn run build-sources",
+		"build": "$npm_execpath run build-clean && $npm_execpath run build-sources",
 		"build-deferred": "scripts/build-deferred.sh",
 		"build-clean": "rm -r dist/* || true",
 		"build-sources": "ttsc",
-		"prepack": "[[ -e .development ]] || yarn run build-deferred || true"
+		"prepack": "[[ -e .development ]] || $npm_execpath run build-deferred || true"
 	},
 	"dependencies": {
 		"isomorphic-fetch": "^3.0.0"

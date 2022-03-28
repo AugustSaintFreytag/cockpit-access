@@ -35,13 +35,16 @@ export async function data(route: string, requestOptions?: CockpitRequestOptions
 	const url = preparedUrl(route)
 
 	try {
-		const options = preparedOptions(defaultOptions(), requestOptions || {})
+		const options = preparedOptions(defaultOptions(), requestOptions ?? {})
 		const response = await fetch(url, {
 			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
 			body: JSON.stringify(options)
 		})
 
-		return await response.json() as CockpitCollectionResponse
+		return (await response.json()) as CockpitCollectionResponse
 	} catch (err) {
 		throw new CockpitError(`Could not get response from cockpit for url '${obfuscatedUrl(url)}'. ${err}`)
 	}

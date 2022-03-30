@@ -9,14 +9,6 @@
 	"source": "src/index.ts",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
-	"scripts": {
-		"build": "$npm_execpath run build-clean && $npm_execpath run build-sources",
-		"build-deferred": "scripts/build-deferred.sh",
-		"build-clean": "rm -r dist/* || true",
-		"build-sources": "ttsc",
-		"postinstall": "scripts/postinstall.sh",
-		"prepack": "$npm_execpath run build-deferred"
-	},
 	"dependencies": {
 		"isomorphic-fetch": "^3.0.0"
 	},
@@ -29,6 +21,14 @@
 		"typescript-transform-paths": "^2.2.3"
 	},
 	"packageManager": "yarn@3.2.0",
+	"scripts": {
+		"build": "$npm_execpath run build-clean && $npm_execpath run build-sources",
+		"build-deferred": "scripts/build-deferred.sh",
+		"build-clean": "rm -r dist/* || true",
+		"build-sources": "ttsc",
+		"postinstall": "scripts/postinstall.sh",
+		"prepack": "$npm_execpath run build-deferred"
+	},
 	"files": [
 		"dist"
 	]

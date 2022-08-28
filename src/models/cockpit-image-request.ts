@@ -1,5 +1,9 @@
 import { URL } from "~/library/types"
-import { Filter as CockpitImageFilter, Mode as CockpitImageMode, Parameters as CockpitImageParameters } from "~/models/cockpit-image-options"
+import {
+	CockpitImageFilter as CockpitImageFilter,
+	CockpitImageFitMode as CockpitImageMode,
+	CockpitImageParameters as CockpitImageParameters
+} from "~/models/cockpit-image-options"
 
 // Options
 

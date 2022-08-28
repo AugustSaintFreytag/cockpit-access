@@ -1,8 +1,8 @@
 import { URL } from "~/library/types"
 
-export type Filter = string
+export type CockpitImageFilter = string
 
-export enum Mode {
+export enum CockpitImageFitMode {
 	Thumbnail = "thumbnail",
 	BestFit = "bestFit",
 	Resize = "resize",
@@ -10,7 +10,7 @@ export enum Mode {
 	FitToHeight = "fitToHeight"
 }
 
-export interface Parameters {
+export interface CockpitImageParameters {
 	src?: URL
 	m?: string
 	w?: number

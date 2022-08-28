@@ -21,17 +21,17 @@ function defaultOptions(): AnyRequestObject {
 
 export async function recordsInCollection(collection: string, requestOptions?: CockpitRequestOptions): Promise<CockpitCollectionResponse> {
 	const route = `api/collections/get/${collection}`
-	return await data(route, requestOptions)
+	return await rawDataFromRoute(route, requestOptions)
 }
 
 export async function singletonRecord(singleton: string, requestOptions?: CockpitRequestOptions): Promise<CockpitSingletonResponse> {
 	const route = `api/singletons/get/${singleton}`
-	return await data(route, requestOptions)
+	return await rawDataFromRoute(route, requestOptions)
 }
 
 // General Fetch
 
-export async function data(route: string, requestOptions?: CockpitRequestOptions): Promise<AnyCockpitResponse> {
+export async function rawDataFromRoute(route: string, requestOptions?: CockpitRequestOptions): Promise<AnyCockpitResponse> {
 	const url = preparedUrl(route)
 
 	try {

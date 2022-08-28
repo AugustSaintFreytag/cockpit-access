@@ -1,8 +1,8 @@
 import { Dictionary, URLComponent } from "~/library/types"
 
-export type ParameterDictionary = Dictionary<string | number | boolean>
+export type URLParameterDictionary = Dictionary<string | number | boolean>
 
-export function joinedParameters(parameters: ParameterDictionary): URLComponent {
+export function urlComponentFromParameters(parameters: URLParameterDictionary): URLComponent {
 	const keys = Object.keys(parameters)
 
 	return keys

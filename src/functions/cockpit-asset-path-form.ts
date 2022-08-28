@@ -1,5 +1,5 @@
 import { addressRegister } from "~/configuration/address-register"
-import { joinedParameters, ParameterDictionary } from "~/functions/query-parameter-form"
+import { urlComponentFromParameters, URLParameterDictionary } from "~/functions/query-parameter-form"
 import { Address, Context } from "~/library/connection"
 import { URL, URLComponent } from "~/library/types"
 import { CockpitImageRequest } from "~/models/cockpit-image-request"
@@ -21,7 +21,7 @@ function pathPrefix(context: Context) {
 
 // Asset Path
 
-/** Returns the full path to an asset managed by Cockpit, including a prefix 
+/** Returns the full path to an asset managed by Cockpit, including a prefix
  * suitable to be accessed from the given context (default: Client). */
 export function cockpitAsset(component: URLComponent, context: Context = Context.Client, prefix: boolean = true): URL {
 	return `${pathPrefix(context)}${cockpitAssetComponent(component)}`
@@ -34,7 +34,7 @@ export function cockpitAssetComponent(component: URLComponent): URLComponent {
 
 // Image Path
 
-/** Returns the full path to an image managed by Cockpit, including a prefix 
+/** Returns the full path to an image managed by Cockpit, including a prefix
  * suitable to be accessed from the given context (default: Client). */
 export function cockpitImage(component: URLComponent, imageRequest: CockpitImageRequest, context: Context = Context.Client): URL {
 	return `${pathPrefix(context)}${cockpitImageComponent(component, imageRequest)}`
@@ -42,8 +42,8 @@ export function cockpitImage(component: URLComponent, imageRequest: CockpitImage
 
 /** Returns the local path component to an image managed by Cockpit. */
 export function cockpitImageComponent(component: URLComponent, imageRequest: CockpitImageRequest): URL {
-	const imageRequestOptions = imageRequest.options(standardizedPathComponent(component)) as ParameterDictionary
-	const joinedImageRequestOptions = joinedParameters(imageRequestOptions)
+	const imageRequestOptions = imageRequest.options(standardizedPathComponent(component)) as URLParameterDictionary
+	const joinedImageRequestOptions = urlComponentFromParameters(imageRequestOptions)
 	const imageUrl: URL = `/api/cockpit/image?token=${token()}&${joinedImageRequestOptions}`
 
 	return imageUrl

@@ -5,7 +5,6 @@
 	"repository": "git@github.com:augustsaintfreytag/cockpit-access.git",
 	"author": "August Saint Freytag <me@augustfreytag.com>",
 	"license": "MIT",
-	"private": true,
 	"source": "src/index.ts",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
